@@ -42,8 +42,8 @@ class CategoryController extends Controller
             'name'=>'required',
             'slug'=>'required|unique:categories'
         ]);
-        $category = Category::created($request->all());
-        return view('admin.categories.edit',compact('category'));
+        $category = Category::create($request->all());
+        return redirect()->route('admin.categories.edit',compact('category'))->with('info','Se creo con exito');
     }
 
     /**
@@ -75,9 +75,15 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request,Category $category)
+    public function update(Request $request, Category $category)
     {
-        //
+        $request->validate([
+            'name'=>'required',
+            'slug'=>"required|unique:categories,slug,$category->id"
+        ]);
+        $category->update($request->all());
+        return redirect()->route('admin.categories.edit',$category)->with('info','Se actualizo con exito');
+
     }
 
     /**
