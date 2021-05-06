@@ -16,7 +16,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $categories = Category::all();
+        $categories = Category::paginate(10);
         return view('admin.categories.index',compact('categories'));
     }
 
@@ -43,7 +43,7 @@ class CategoryController extends Controller
             'slug'=>'required|unique:categories'
         ]);
         $category = Category::create($request->all());
-        return redirect()->route('admin.categories.edit',compact('category'))->with('info','Se creo con exito');
+        return redirect()->route('admin.categories.edit',compact('category'))->with('info','Categoria creada con exito');
     }
 
     /**
@@ -82,7 +82,7 @@ class CategoryController extends Controller
             'slug'=>"required|unique:categories,slug,$category->id"
         ]);
         $category->update($request->all());
-        return redirect()->route('admin.categories.edit',$category)->with('info','Se actualizo con exito');
+        return redirect()->route('admin.categories.edit',$category)->with('info','Categoria editada con exito');
 
     }
 
@@ -94,6 +94,7 @@ class CategoryController extends Controller
      */
     public function destroy(Category $category)
     {
-        //
+        $category->delete();
+        return redirect()->route('admin.categories.index')->with('info','Categoria eliminada con exito');
     }
 }
