@@ -34,7 +34,6 @@
             {!! Form::submit('Actualizar Categoria', ['class' => 'btn btn-primary']) !!}
             {!! Form::close() !!}
         </div>
-        {{$categories->links()}}
     </div>
 @stop
 @section('js')

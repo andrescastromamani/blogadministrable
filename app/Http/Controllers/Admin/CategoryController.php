@@ -43,7 +43,7 @@ class CategoryController extends Controller
             'slug'=>'required|unique:categories'
         ]);
         $category = Category::create($request->all());
-        return redirect()->route('admin.categories.edit',compact('category'))->with('info','Categoria creada con exito');
+        return redirect()->route('admin.categories.index',compact('category'))->with('info','Categoria creada con exito');
     }
 
     /**
@@ -82,7 +82,7 @@ class CategoryController extends Controller
             'slug'=>"required|unique:categories,slug,$category->id"
         ]);
         $category->update($request->all());
-        return redirect()->route('admin.categories.edit',$category)->with('info','Categoria editada con exito');
+        return redirect()->route('admin.categories.index',$category)->with('info','Categoria editada con exito');
 
     }
 
