@@ -25,7 +25,7 @@ class TagController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.tags.create');
     }
 
     /**
@@ -36,7 +36,12 @@ class TagController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name'=>'required',
+            'slug'=>'required|unique:categories'
+        ]);
+        $tag = Category::create($request->all());
+        return redirect()->route('admin.tags.index',compact('tag'))->with('info','Etiqueta creada con exito');
     }
 
     /**
