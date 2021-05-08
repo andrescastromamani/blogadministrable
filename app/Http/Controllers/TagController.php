@@ -61,9 +61,9 @@ class TagController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Tag $id)
+    public function edit(Tag $tag)
     {
-        //
+        return view('admin.tags.edit',compact('tag'));
     }
 
     /**
@@ -75,7 +75,12 @@ class TagController extends Controller
      */
     public function update(Request $request,Tag $tag)
     {
-        //
+        $request->validate([
+            'name'=>'required',
+            'slug'=>"required|unique:categories,slug,$tag->id"
+        ]);
+        $tag->update($request->all());
+        return redirect()->route('admin.tags.index',$tag)->with('info','Categoria editada con exito');
     }
 
     /**
