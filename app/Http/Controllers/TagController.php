@@ -38,9 +38,10 @@ class TagController extends Controller
     {
         $request->validate([
             'name'=>'required',
-            'slug'=>'required|unique:categories'
+            'slug'=>'required|unique:categories',
+            'color'=>'required',
         ]);
-        $tag = Category::create($request->all());
+        $tag = Tag::create($request->all());
         return redirect()->route('admin.tags.index',compact('tag'))->with('info','Etiqueta creada con exito');
     }
 
