@@ -31,6 +31,13 @@
                 <span class="text-red">{{ $message }}</span>
                 @enderror
             </div>
+            <div class="form-group">
+                {!! Form::label('color', 'Color') !!}
+                {!! Form::text('color', null, ['class' => 'form-control', 'placeholder' => 'Ingrese el Color']) !!}
+                @error('color')
+                <span class="text-red">{{ $message }}</span>
+                @enderror
+            </div>
             {!! Form::submit('Actualizar Etiqueta', ['class' => 'btn btn-primary']) !!}
             {!! Form::close() !!}
         </div>

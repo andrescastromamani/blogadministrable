@@ -78,10 +78,11 @@ class TagController extends Controller
     {
         $request->validate([
             'name'=>'required',
-            'slug'=>"required|unique:categories,slug,$tag->id"
+            'slug'=>"required|unique:categories,slug,$tag->id",
+            'color'=>'required',
         ]);
         $tag->update($request->all());
-        return redirect()->route('admin.tags.index',$tag)->with('info','Categoria editada con exito');
+        return redirect()->route('admin.tags.index',$tag)->with('info','Etiqueta editada con exito');
     }
 
     /**
@@ -92,6 +93,7 @@ class TagController extends Controller
      */
     public function destroy(Tag $tag)
     {
-        //
+        $tag->delete();
+        return redirect()->route('admin.tags.index')->with('info','Etiqueta eliminada con exito');
     }
 }
