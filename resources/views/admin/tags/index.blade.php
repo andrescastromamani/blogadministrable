@@ -16,7 +16,7 @@
     @endif
     <div class="card">
         <div class="card-header">
-            <a class="btn btn-primary" href="{{ route('admin.tags.create') }}">Agregar Etiqueta +</a>
+            <a class="btn btn-primary float-right" href="{{ route('admin.tags.create') }}">Agregar Etiqueta +</a>
         </div>
         <div class="card-body">
             <table class="table">
@@ -34,8 +34,7 @@
                         <th scope="row">{{ $tag->id }}</th>
                         <td scope="row">{{ $tag->name }}</td>
                         <td colspan="2">{{ $tag->color }}</td>
-                        <td width="10px"><a class="btn btn-primary btn-sm"
-                                            href="{{ route('admin.tags.edit', $tag) }}">editar</a></td>
+                        <td width="10px"><a class="btn btn-primary btn-sm" href="{{ route('admin.tags.edit', $tag) }}">editar</a></td>
                         <td width="10px">
                             <form action="{{ route('admin.tags.destroy', $tag) }}" method="post">
                                 @csrf
@@ -47,9 +46,6 @@
                 @endforeach
                 </tbody>
             </table>
-        </div>
-        <div class="mt-4">
-            {{$tags->links()}}
         </div>
     </div>
 @stop

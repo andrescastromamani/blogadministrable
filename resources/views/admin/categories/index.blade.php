@@ -16,7 +16,7 @@
     @endif
     <div class="card">
         <div class="card-header">
-            <a class="btn btn-primary" href="{{ route('admin.categories.create') }}">Agregar Categoria +</a>
+            <a class="btn btn-primary float-right" href="{{ route('admin.categories.create') }}">Agregar Categoria +</a>
         </div>
         <div class="card-body">
             <table class="table">
@@ -46,7 +46,7 @@
                 </tbody>
             </table>
         </div>
-        <div class="mt-4">   
+        <div class="mt-4">
             {{$categories->links()}}
         </div>
     </div>
