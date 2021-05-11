@@ -9,9 +9,9 @@
 @section('content')
     <div class="card">
         <div class="card-body">
-            {!! Form::open(['route' => 'admin.tags.store']) !!}
-            @include('admin.tags.partials.form')
-            {!! Form::submit('Crear Etiqueta', ['class' => 'btn btn-primary']) !!}
+            {!! Form::open(['route' => 'admin.posts.store','autocomplete'=>'off']) !!}
+            @include('admin.posts.partials.form')
+            {!! Form::submit('Crear Post', ['class' => 'btn btn-primary']) !!}
             {!! Form::close() !!}
         </div>
     </div>
