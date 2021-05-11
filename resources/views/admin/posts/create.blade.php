@@ -7,7 +7,14 @@
 @stop
 
 @section('content')
-    <p>Welcome to this beautiful admin panel.</p>
+    <div class="card">
+        <div class="card-body">
+            {!! Form::open(['route' => 'admin.tags.store']) !!}
+            @include('admin.tags.partials.form')
+            {!! Form::submit('Crear Etiqueta', ['class' => 'btn btn-primary']) !!}
+            {!! Form::close() !!}
+        </div>
+    </div>
 @stop
 
 @section('css')
