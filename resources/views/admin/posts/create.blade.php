@@ -20,7 +20,27 @@
 @section('css')
     <link rel="stylesheet" href="/css/admin_custom.css">
 @stop
-
 @section('js')
-    <script> console.log('Hi!'); </script>
-@stop
+    <script src="{{ asset('vendor/jQuery-stringToSlug/jquery.stringToSlug.min.js') }}"></script>
+    <script src="https://cdn.ckeditor.com/ckeditor5/27.1.0/classic/ckeditor.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#name").stringToSlug({
+                setEvents: 'keyup keydown blur',
+                getPut: '#slug',
+                space: '-'
+            });
+        });
+        ClassicEditor
+            .create( document.querySelector( '#extract' ) )
+            .catch( error => {
+                console.error( error );
+            } );
+        ClassicEditor
+            .create( document.querySelector( '#body' ) )
+            .catch( error => {
+                console.error( error );
+            } );
+
+    </script>
+@endsection
