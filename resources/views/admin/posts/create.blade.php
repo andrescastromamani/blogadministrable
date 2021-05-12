@@ -10,6 +10,7 @@
     <div class="card">
         <div class="card-body">
             {!! Form::open(['route' => 'admin.posts.store','autocomplete'=>'off']) !!}
+            {!! Form::hidden('user_id',auth()->user()->id) !!}
             @include('admin.posts.partials.form')
             {!! Form::submit('Crear Post', ['class' => 'btn btn-primary']) !!}
             {!! Form::close() !!}

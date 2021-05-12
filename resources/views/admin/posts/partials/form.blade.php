@@ -27,6 +27,10 @@
             {{$tag->name}}
         </label>
     @endforeach
+    @error('tags')
+    <br>
+    <span class="text-red">{{ $message }}</span>
+    @enderror
 </div>
 <div class="form-group">
     <p class="font-weight-bold">Estado</p>
@@ -36,12 +40,22 @@
     <label for="">
         {!! Form::radio('status',2) !!} Publicado
     </label>
+    @error('status')
+    <br>
+    <span class="text-red">{{ $message }}</span>
+    @enderror
 </div>
 <div class="form-group">
     {!! Form::label('extract','Extracto:') !!}
     {!! Form::textarea('extract',null,['class'=>'form-control']) !!}
+    @error('extract')
+    <span class="text-red">{{ $message }}</span>
+    @enderror
 </div>
 <div class="form-group">
     {!! Form::label('body','Cuerpo Post:') !!}
     {!! Form::textarea('body',null,['class'=>'form-control']) !!}
+    @error('body')
+    <span class="text-red">{{ $message }}</span>
+    @enderror
 </div>

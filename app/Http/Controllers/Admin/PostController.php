@@ -8,6 +8,8 @@ use App\Models\Post;
 use App\Models\Tag;
 use Illuminate\Http\Request;
 
+use App\Http\Requests\StorePostRequest;
+
 class PostController extends Controller
 {
     /**
@@ -38,9 +40,9 @@ class PostController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StorePostRequest $request)
     {
-        //
+        return 'validacion pasada con exito';
     }
 
     /**
