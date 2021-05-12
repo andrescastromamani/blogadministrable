@@ -45,6 +45,23 @@
     <span class="text-red">{{ $message }}</span>
     @enderror
 </div>
+<div class="row mt-3">
+    <div class="col">
+        <div class="image-wrapper">
+            <img id="picture" src="https://lh3.googleusercontent.com/proxy/T8PsHVAV7RkewJbWFkmnnX2Rmm0F5EDA5E4_9cfZ98leOWcq8mcId1o27tIV9R-QVUkqmDwDEoeHlh8RvbNAy-ji2eLVbYONuhlNIM4wlpv33eGewxSZ" alt="imagen fondo">
+        </div>
+    </div>
+    <div class="col">
+        <div class="form-group">
+            {!! Form::label('file','imagen del post') !!}
+            {!! Form::file('file',['class'=>'form-control-file','accept'=>'image/*']) !!}
+        </div>
+        @error('file')
+        <span class="text-red">{{ $message }}</span>
+        @enderror
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vel arcu sit amet purus efficitur facilisis. Integer et mauris pulvinar, pretium sem vitae, efficitur erat. In quis quam dui. Aenean ornare hendrerit porta. Phasellus aliquet mauris sit amet nibh ullamcorper rutrum. Donec mattis dictum dictum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Aliquam eget tristique lacus. Vestibulum cursus mi a risus varius, nec tincidunt diam venenatis. Quisque non eros magna.</p>
+    </div>
+</div>
 <div class="form-group">
     {!! Form::label('extract','Extracto:') !!}
     {!! Form::textarea('extract',null,['class'=>'form-control']) !!}
