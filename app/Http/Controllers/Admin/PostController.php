@@ -42,7 +42,11 @@ class PostController extends Controller
      */
     public function store(StorePostRequest $request)
     {
-        return 'validacion pasada con exito';
+        $post = Post::create($request->all());
+        if ($request->tags){
+            $post->tags()->attach($request->tags);
+        }
+        return redirect()->route('admin.posts.edit',$post);
     }
 
     /**
@@ -64,7 +68,7 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
-        //
+        return view('admin.posts.edit');
     }
 
     /**
