@@ -2,7 +2,7 @@
     <div class="container py-8">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             @foreach($posts as $post)
-                <article class="w-full h-80 bg-cover bg-center @if($loop->first) md:col-span-2 @endif" style="background-image: url(@if ($post->image){{Storage::url($post->image->url)}}@else https://lh3.googleusercontent.com/proxy/T8PsHVAV7RkewJbWFkmnnX2Rmm0F5EDA5E4_9cfZ98leOWcq8mcId1o27tIV9R-QVUkqmDwDEoeHlh8RvbNAy-ji2eLVbYONuhlNIM4wlpv33eGewxSZ @endif">
+                <article class="w-full h-80 bg-cover bg-center @if($loop->first) md:col-span-2 @endif" style="background-image: url(@if ($post->image){{Storage::url($post->image->url)}}@else https://lh3.googleusercontent.com/proxy/9tECwFAe-y7qQbs6J9ysfP5YYfxv2K1hdMLRyXSxR_tX1C4hRZrohO9m7uvkzrz5lIykPRqaCuojoPw6s6OEE6O2MkWyxiwKVjD0Ap6_0zv24pxFbhmW @endif">
                     <div class="w-full h-full px-8 flex flex-col justify-center">
                         <div>
                             @foreach($post->tags as $tag)

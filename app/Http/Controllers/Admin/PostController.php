@@ -43,7 +43,7 @@ class PostController extends Controller
      */
     public function store(StorePostRequest $request)
     {
-        return Storage::put('posts',$request->file('file'));
+        //return Storage::put('posts',$request->file('file'));
         $post = Post::create($request->all());
         if ($request->file('file')){
             $url = Storage::put('posts',$request->file('file'));
@@ -54,7 +54,7 @@ class PostController extends Controller
         if ($request->tags){
             $post->tags()->attach($request->tags);
         }
-        return redirect()->route('admin.posts.edit',$post);
+        return redirect()->route('admin.posts.index',$post);
     }
 
     /**
@@ -76,7 +76,9 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
-        return view('admin.posts.edit');
+        $categories = Category::pluck('name','id');
+        $tags = Tag::all();
+        return view('admin.posts.edit',compact('post','categories','tags'));
     }
 
     /**

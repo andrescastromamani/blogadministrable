@@ -45,10 +45,14 @@
     <span class="text-red">{{ $message }}</span>
     @enderror
 </div>
-<div class="row mt-3">
+<div class="row mb-3">
     <div class="col">
         <div class="image-wrapper">
-            <img id="picture" src="https://lh3.googleusercontent.com/proxy/T8PsHVAV7RkewJbWFkmnnX2Rmm0F5EDA5E4_9cfZ98leOWcq8mcId1o27tIV9R-QVUkqmDwDEoeHlh8RvbNAy-ji2eLVbYONuhlNIM4wlpv33eGewxSZ" alt="imagen fondo">
+            @isset($post->image)
+                <img  id="picture" src="{{Storage::url($post->image->url)}}" alt="">
+            @else
+                <img id="picture" src="https://lh3.googleusercontent.com/proxy/9tECwFAe-y7qQbs6J9ysfP5YYfxv2K1hdMLRyXSxR_tX1C4hRZrohO9m7uvkzrz5lIykPRqaCuojoPw6s6OEE6O2MkWyxiwKVjD0Ap6_0zv24pxFbhmW" alt="imagen fondo">
+            @endisset
         </div>
     </div>
     <div class="col">

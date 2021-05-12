@@ -8,7 +8,7 @@
                     @if($post->image)
                         <img class="w-full h-80 object-cover object-center" src="{{Storage::url($post->image->url)}}" alt="image">
                     @else
-                        <img class="w-full h-80 object-cover object-center" src="https://lh3.googleusercontent.com/proxy/T8PsHVAV7RkewJbWFkmnnX2Rmm0F5EDA5E4_9cfZ98leOWcq8mcId1o27tIV9R-QVUkqmDwDEoeHlh8RvbNAy-ji2eLVbYONuhlNIM4wlpv33eGewxSZ" alt="image">
+                        <img class="w-full h-80 object-cover object-center" src="https://lh3.googleusercontent.com/proxy/9tECwFAe-y7qQbs6J9ysfP5YYfxv2K1hdMLRyXSxR_tX1C4hRZrohO9m7uvkzrz5lIykPRqaCuojoPw6s6OEE6O2MkWyxiwKVjD0Ap6_0zv24pxFbhmW" alt="image">
                     @endif
                 </figure>
                 <div class="text-base text-gray-500 mt-4">
@@ -24,7 +24,7 @@
                                 @if($similar->image)
                                     <img class="w-30 h-20 object-cover object-center" src="{{Storage::url($similar->image->url)}}" alt="">
                                 @else
-                                    <img class="w-30 h-20 object-cover object-center" src="https://lh3.googleusercontent.com/proxy/T8PsHVAV7RkewJbWFkmnnX2Rmm0F5EDA5E4_9cfZ98leOWcq8mcId1o27tIV9R-QVUkqmDwDEoeHlh8RvbNAy-ji2eLVbYONuhlNIM4wlpv33eGewxSZ" alt="">
+                                    <img class="w-30 h-20 object-cover object-center" src="https://lh3.googleusercontent.com/proxy/9tECwFAe-y7qQbs6J9ysfP5YYfxv2K1hdMLRyXSxR_tX1C4hRZrohO9m7uvkzrz5lIykPRqaCuojoPw6s6OEE6O2MkWyxiwKVjD0Ap6_0zv24pxFbhmW" alt="">
                                 @endif
                                 <span class="ml-2 text-gray-600">{{$similar->name}}</span>
                             </a>
