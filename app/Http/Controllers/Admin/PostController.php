@@ -8,7 +8,7 @@ use App\Models\Post;
 use App\Models\Tag;
 use Illuminate\Http\Request;
 
-use App\Http\Requests\StorePostRequest;
+use App\Http\Requests\PostRequest;
 use Illuminate\Support\Facades\Storage;
 
 class PostController extends Controller
@@ -41,7 +41,7 @@ class PostController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StorePostRequest $request)
+    public function store(PostRequest $request)
     {
         //return Storage::put('posts',$request->file('file'));
         $post = Post::create($request->all());
@@ -88,9 +88,26 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Post $post)
+    public function update(PostRequest $request, Post $post)
     {
-        //
+        $post->update($request->all());
+        if ($request->file('file')){
+            $url = Storage::put('posts',$request->file('file'));
+            if ($post->image()){
+                Storage::delete($post->image->url);
+                $post->image()->update([
+                    'url'=>$url
+                ]);
+            }else{
+                $post->image()->create([
+                    'url'=>$url
+                ]);
+            }
+        }
+        if ($request->tags){
+            $post->tags()->attach($request->tags);
+        }
+        return redirect()->route('admin.posts.index',$post)->with('info','El post se actualizo con exito');
     }
 
     /**
