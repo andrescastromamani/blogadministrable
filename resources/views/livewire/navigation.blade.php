@@ -29,8 +29,8 @@
             </div>
             <div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
                 <a href="/" class="flex-shrink-0 flex items-center">
-                    <img class="block lg:hidden h-8 w-auto" src="https://lh3.googleusercontent.com/proxy/Df0g6LDvRSKLLs6c1cswDU7oxh5GADeqjZehvLVExzaC4-vyS4VAn6TeF_Wt5HU2CWB7i5i-m6azXzfuC0BQazLbISCD3di2i1rW3jz_9hDbtxhTX9Q" alt="Workflow">
-                    <img class="hidden lg:block h-8 w-auto" src="https://lh3.googleusercontent.com/proxy/Df0g6LDvRSKLLs6c1cswDU7oxh5GADeqjZehvLVExzaC4-vyS4VAn6TeF_Wt5HU2CWB7i5i-m6azXzfuC0BQazLbISCD3di2i1rW3jz_9hDbtxhTX9Q" alt="Workflow">
+                    <img class="block lg:hidden h-8 w-auto" src="https://lh3.googleusercontent.com/proxy/H07NUqB2R0B2FUZguAA3l8Dt0TbcgmbILeVb0jHHb8gJa_hJBP4kXDMb1ZiUq_CHlYFnM1BAYp_Wmi0NfonW9LEYPM8GvDIHBkzKJQOqxfh2WBb4vRY" alt="Workflow">
+                    <img class="hidden lg:block h-8 w-auto" src="https://lh3.googleusercontent.com/proxy/H07NUqB2R0B2FUZguAA3l8Dt0TbcgmbILeVb0jHHb8gJa_hJBP4kXDMb1ZiUq_CHlYFnM1BAYp_Wmi0NfonW9LEYPM8GvDIHBkzKJQOqxfh2WBb4vRY" alt="Workflow">
                 </a>
                 <div class="hidden sm:block sm:ml-6">
                     <div class="flex space-x-4">

@@ -51,7 +51,7 @@
             @isset($post->image)
                 <img  id="picture" src="{{Storage::url($post->image->url)}}" alt="">
             @else
-                <img id="picture" src="https://lh3.googleusercontent.com/proxy/9tECwFAe-y7qQbs6J9ysfP5YYfxv2K1hdMLRyXSxR_tX1C4hRZrohO9m7uvkzrz5lIykPRqaCuojoPw6s6OEE6O2MkWyxiwKVjD0Ap6_0zv24pxFbhmW" alt="imagen fondo">
+                <img id="picture" src="https://lh3.googleusercontent.com/proxy/8baikMjQWTxhlUylpiemnFMZYyRLttDKAMQWQv445I_Ha7MSoyTDd-XeX0mo087P7eFpFYAqOkxnWQX-wm-_PVjaHP-ipaRy_Oh7mD9Dh83lQP4VSmSw" alt="imagen fondo">
             @endisset
         </div>
     </div>
