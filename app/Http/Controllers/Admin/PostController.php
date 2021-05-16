@@ -107,7 +107,7 @@ class PostController extends Controller
         if ($request->tags){
             $post->tags()->sync($request->tags);
         }
-        return redirect()->route('admin.posts.index',$post);
+        return redirect()->route('admin.posts.index',$post)->with('info','Se actualizo el post con exito');
     }
 
     /**
