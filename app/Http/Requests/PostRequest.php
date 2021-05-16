@@ -36,9 +36,9 @@ class PostRequest extends FormRequest
             'file'=>'image',
         ];
         if ($post){
-            $rules['slug']='required|unique:post,slug,'.$post->id;
+            $rules['slug']='required|unique:posts,slug,' . $post->id;
         }
-        if ($this->status==2){
+        if ($this->status == 2){
             $rules = array_merge($rules,[
                 'category_id'=>'required',
                 'tags'=>'required',

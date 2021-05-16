@@ -9,7 +9,7 @@
 @section('content')
     <div class="card">
         <div class="card-body">
-            {!! Form::model($post,['route' => ['admin.posts.update',$post],'autocomplete'=>'off','files'=>true,'method'=>'put']) !!}
+            {!! Form::model($post,['route' => ['admin.posts.update', $post],'autocomplete'=>'off','files'=>true,'method'=>'put']) !!}
             @include('admin.posts.partials.form')
             {!! Form::submit('Actualizar Post', ['class' => 'btn btn-primary']) !!}
             {!! Form::close() !!}

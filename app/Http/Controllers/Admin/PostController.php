@@ -88,18 +88,18 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(PostRequest $request, Post $post)
+    public function update(PostRequest $request,Post $post)
     {
         $post->update($request->all());
         if ($request->file('file')){
             $url = Storage::put('posts',$request->file('file'));
-            if ($post->image()){
+            if ($post->image){
                 Storage::delete($post->image->url);
-                $post->image()->update([
+                $post->image->update([
                     'url'=>$url
                 ]);
             }else{
-                $post->image()->create([
+                $post->image->create([
                     'url'=>$url
                 ]);
             }
@@ -107,7 +107,7 @@ class PostController extends Controller
         if ($request->tags){
             $post->tags()->sync($request->tags);
         }
-        return redirect()->route('admin.posts.index',$post)->with('info','El post se actualizo con exito');
+        return redirect()->route('admin.posts.index',$post);
     }
 
     /**

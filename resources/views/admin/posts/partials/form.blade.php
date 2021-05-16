@@ -49,9 +49,9 @@
     <div class="col">
         <div class="image-wrapper">
             @isset($post->image)
-                <img  id="picture" src="{{Storage::url($post->image->url)}}" alt="">
+                <img  id="picture" src="{{Storage::url($post->image->url)}}" alt="image fondo">
             @else
-                <img id="picture" src="{{asset('img/imgdefault.jpg')}}" alt="imagen fondo">
+                <img  id="picture" src="{{asset('img/imgdefault.jpg')}}" alt="imagen fondo">
             @endisset
         </div>
     </div>
