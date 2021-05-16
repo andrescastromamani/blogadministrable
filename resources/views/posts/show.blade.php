@@ -8,7 +8,7 @@
                     @if($post->image)
                         <img class="w-full h-80 object-cover object-center" src="{{Storage::url($post->image->url)}}" alt="image">
                     @else
-                        <img class="w-full h-80 object-cover object-center" src="https://lh3.googleusercontent.com/proxy/8baikMjQWTxhlUylpiemnFMZYyRLttDKAMQWQv445I_Ha7MSoyTDd-XeX0mo087P7eFpFYAqOkxnWQX-wm-_PVjaHP-ipaRy_Oh7mD9Dh83lQP4VSmSw" alt="image">
+                        <img class="w-full h-80 object-cover object-center" src="{{asset('img/imgdefault.jpg')}}" alt="image">
                     @endif
                 </figure>
                 <div class="text-base text-gray-500 mt-4">

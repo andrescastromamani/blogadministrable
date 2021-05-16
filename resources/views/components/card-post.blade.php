@@ -3,7 +3,7 @@
     @if($post->image)
         <img class="w-full h-72 object-cover object-center" src="{{Storage::url($post->image->url)}}" alt="image">
     @else
-        <img class="w-full h-72 object-cover object-center" src="https://lh3.googleusercontent.com/proxy/T8PsHVAV7RkewJbWFkmnnX2Rmm0F5EDA5E4_9cfZ98leOWcq8mcId1o27tIV9R-QVUkqmDwDEoeHlh8RvbNAy-ji2eLVbYONuhlNIM4wlpv33eGewxSZ" alt="image">
+        <img class="w-full h-72 object-cover object-center" src="{{asset('img/imgdefault.jpg')}}" alt="image">
     @endif
     <div class="px-6 py-8">
         <h1 class="font-bold text-xl mb-2">

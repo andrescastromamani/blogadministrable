@@ -45,8 +45,8 @@ return [
     |
     */
 
-    'logo' => '<b>Admin</b>UMSS',
-    'logo_img' => 'https://lh3.googleusercontent.com/proxy/DKh52NnzH97vgacVVTbyjrama_HgvPn9CYDh5P__lbXJJCtxbTq7ycc_NkWZdRpXkOqnae_HK2UEc0vkINGXV7q8pg',
+    'logo' => '<b>Admin</b>LABINFSIS',
+    'logo_img' => 'img/logoadmin.png',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
     'logo_img_xl_class' => 'brand-image-xs',
