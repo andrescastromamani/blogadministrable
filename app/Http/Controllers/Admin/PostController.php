@@ -46,9 +46,9 @@ class PostController extends Controller
         //return Storage::put('posts',$request->file('file'));
         $post = Post::create($request->all());
         if ($request->file('file')){
-            $url = Storage::put('posts',$request->file('file'));
+            $url = Storage::put('posts', $request->file('file'));
             $post->image()->create([
-                'url'=>$url
+                'url' => $url
             ]);
         }
         if ($request->tags){
