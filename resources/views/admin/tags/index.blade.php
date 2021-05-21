@@ -15,11 +15,13 @@
 
     @endif
     <div class="card">
+        @can('admin.tags.create')
         <div class="card-header">
             <a class="btn btn-primary float-right" href="{{ route('admin.tags.create') }}">Agregar Etiqueta +</a>
         </div>
+        @endcan
         <div class="card-body">
-            <table class="table">
+            <table class="table table-striped">
                 <thead>
                 <tr>
                     <th scope="col">#</th>
@@ -34,13 +36,19 @@
                         <th scope="row">{{ $tag->id }}</th>
                         <td scope="row">{{ $tag->name }}</td>
                         <td colspan="2">{{ $tag->color }}</td>
-                        <td width="10px"><a class="btn btn-primary btn-sm" href="{{ route('admin.tags.edit', $tag) }}">editar</a></td>
                         <td width="10px">
+                            @can('admin.tags.edit')
+                            <a class="btn btn-primary btn-sm" href="{{ route('admin.tags.edit', $tag) }}">editar</a>
+                            @endcan
+                        </td>
+                        <td width="10px">
+                            @can('admin.tags.destroy')
                             <form action="{{ route('admin.tags.destroy', $tag) }}" method="post">
                                 @csrf
                                 @method('delete')
                                 <button class="btn btn-danger btn-sm" type="submit">Eliminar</button>
                             </form>
+                            @endcan
                         </td>
                     </tr>
                 @endforeach
