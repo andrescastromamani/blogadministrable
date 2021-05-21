@@ -18,7 +18,7 @@ class UserSeeder extends Seeder
             'name'=>'Admin',
             'email'=>'admin@admin.com',
             'password'=>bcrypt('admin123')
-        ]);
+        ])->assignRole('Admin');
         User::factory(99)->create();
     }
 }
