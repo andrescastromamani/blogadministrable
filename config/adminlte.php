@@ -238,24 +238,27 @@ return [
             'text'        => 'Dashboard',
             'route'         => 'admin.index',
             'icon'        => 'fas fa-tachometer-alt fa-fw',
+            'can' => 'admin.index',
         ],
         [
             'text'        => 'Usuarios',
             'route'         => 'admin.users.index',
             'icon'        => 'fas fa-users fa-fw',
+            'can' => 'admin.users.index',
         ],
-        ['header' => 'Administrador'],
         [
             'text' => 'Categorias',
             'route'  => 'admin.categories.index',
             'icon' => 'fab fa-fw fa-buffer',
             'active' => ['admin/categories*'],
+            'can' => 'admin.categories.index',
         ],
         [
             'text' => 'Etiquetas',
             'route'  => 'admin.tags.index',
             'icon' => 'far fa-fw fa-bookmark',
             'active' => ['admin/tags*'],
+            'can' => 'admin.tags.index',
         ],
         ['header' => 'Opciones de Post'],
         [

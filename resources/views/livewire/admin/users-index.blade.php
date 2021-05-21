@@ -19,13 +19,8 @@
                         <th scope="row">{{ $user->id }}</th>
                         <td scope="row">{{ $user->name }}</td>
                         <td scope="row">{{ $user->email }}</td>
-                        <td width="10px"><a class="btn btn-primary btn-sm" href="{{ route('admin.users.edit', $user) }}">editar</a></td>
                         <td width="10px">
-                            <form action="{{ route('admin.users.destroy', $user) }}" method="post">
-                                @csrf
-                                @method('delete')
-                                <button class="btn btn-danger btn-sm" type="submit">Eliminar</button>
-                            </form>
+                            <a class="btn btn-primary btn-sm" href="{{ route('admin.users.edit', $user) }}">editar</a>
                         </td>
                     </tr>
                 @endforeach
