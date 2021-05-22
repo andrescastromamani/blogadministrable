@@ -17,7 +17,7 @@
                 <tr>
                     <th scope="row">{{ $post->id }}</th>
                     <td scope="row">{{ $post->name }}</td>
-                    <td width="10px"><a class="btn btn-primary btn-sm" href="{{ route('admin.posts.edit', $post) }}">editar</a></td>
+                    <td width="10px"><a class="btn btn-warning btn-sm" href="{{ route('admin.posts.edit', $post) }}">editar</a></td>
                     <td width="10px">
                         <form action="{{ route('admin.posts.destroy', $post) }}" method="post">
                             @csrf

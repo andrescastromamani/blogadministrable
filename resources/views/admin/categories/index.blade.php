@@ -36,7 +36,7 @@
                             <td colspan="2">{{ $category->name }}</td>
                             <td width="10px">
                                 @can('admin.categories.edit')
-                                <a class="btn btn-primary btn-sm" href="{{ route('admin.categories.edit', $category) }}">editar</a>
+                                <a class="btn btn-warning btn-sm" href="{{ route('admin.categories.edit', $category) }}">editar</a>
                                 @endcan
                             </td>
                             <td width="10px">

@@ -38,7 +38,7 @@
                         <td colspan="2">{{ $tag->color }}</td>
                         <td width="10px">
                             @can('admin.tags.edit')
-                            <a class="btn btn-primary btn-sm" href="{{ route('admin.tags.edit', $tag) }}">editar</a>
+                            <a class="btn btn-warning btn-sm" href="{{ route('admin.tags.edit', $tag) }}">editar</a>
                             @endcan
                         </td>
                         <td width="10px">
