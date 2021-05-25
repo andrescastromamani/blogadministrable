@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 
 class CategoryController extends Controller
@@ -34,6 +35,8 @@ class CategoryController extends Controller
             'slug'=>'required|unique:categories'
         ]);
         $category = Category::create($request->all());
+        Session::flash('flash_message', 'Categoria Creado con exito');
+        Session::flash('flash_message_type', 'success');
         return redirect()->route('admin.categories.index',compact('category'))->with('info','Categoria creada con exito');
     }
 
