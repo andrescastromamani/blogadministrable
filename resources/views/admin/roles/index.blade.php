@@ -7,6 +7,13 @@
 @stop
 
 @section('content')
+    @if (session('info'))
+        <div class="alert alert-success">
+            <strong>{{ session('info') }}</strong>
+        </div>
+    @else
+
+    @endif
     <div class="card">
         <div class="card-header">
             <a class="btn btn-primary float-right" href="{{ route('admin.roles.create') }}">Agregar Rol +</a>
