@@ -7,13 +7,12 @@
 @stop
 
 @section('content')
-    <p>Welcome to this beautiful admin panel.</p>
-@stop
-
-@section('css')
-    <link rel="stylesheet" href="/css/admin_custom.css">
-@stop
-
-@section('js')
-    <script> console.log('Hi!'); </script>
+    <div class="card">
+        <div class="card-body">
+            {!! Form::model($role,['route' => ['admin.roles.update',$role],'method'=>'PUT']) !!}
+                @include('admin.roles.partials.form')
+            {!! Form::submit('Editar Categoria', ['class' => 'btn btn-primary']) !!}
+            {!! Form::close() !!}
+        </div>
+    </div>
 @stop
